@@ -13,3 +13,47 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+Mobile.startApplication('C:\\Users\\Heaven\\Downloads\\home-health-workflow-190410-qa-0.1.7.apk', true)
+
+Mobile.setText(findTestObject('android.widget.EditText0'), 'heavenrn', 0)
+
+Mobile.setText(findTestObject('android.widget.EditText1'), '12345678Heaven!', 0)
+
+Mobile.tap(findTestObject('android.view.View18'), 0)
+
+WebUI.delay(10)
+
+Mobile.tap(findTestObject('android.view.View28 (1)'), 0)
+
+WebUI.delay(10)
+
+Mobile.tap(findTestObject('android.view.View29'), 0)
+
+WebUI.delay(10)
+
+Mobile.tap(findTestObject('android.view.View36'), 0)
+
+WebUI.delay(5)
+
+Mobile.tap(findTestObject('android.view.View101 - 13'), 0)
+
+WebUI.delay(5)
+
+Mobile.tap(findTestObject('android.widget.Button5 - Set'), 0)
+
+WebUI.delay(5)
+
+Mobile.tap(findTestObject('android.view.View42'), 0)
+
+WebUI.delay(10)
+
+Mobile.setText(findTestObject('android.widget.EditText0'), '03', 0)
+WebUI.delay(10)
+
+Mobile.setText(findTestObject('android.widget.EditText1'), '55', 0)
+WebUI.delay(10)
+
+Mobile.tap(findTestObject('android.widget.Button7 - Set'), 0)
+
+Mobile.closeApplication()
+

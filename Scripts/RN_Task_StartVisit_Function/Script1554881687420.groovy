@@ -13,47 +13,67 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
+//Start Application
+//Change file location
 Mobile.startApplication('C:\\Users\\Heaven\\Downloads\\home-health-workflow-190410-qa-0.1.7.apk', true)
 
-Mobile.setText(findTestObject('android.widget.EditText0'), 'heavenrn', 0)
+//Login credentials
+//Change username (SNV or LVN)
+Mobile.setText(findTestObject('loginRepo/usernameEditText'), 'heavenrn', 0)
 
-Mobile.setText(findTestObject('android.widget.EditText1'), '12345678Heaven!', 0)
+//Change password (SNV or LVN)
+Mobile.setText(findTestObject('loginRepo/passwordEditText'), '12345678Heaven!', 0)
 
-Mobile.tap(findTestObject('android.view.View18'), 0)
+//Login button
+Mobile.tap(findTestObject('loginRepo/loginbtn'), 0)
 
-WebUI.delay(10)
+Mobile.delay(10)
 
-Mobile.tap(findTestObject('android.view.View28 (1)'), 0)
+//Dashboard page
+//Click task on the dashboard
+//Change object, the object should be the task that you want to open
+//NOTE: every specific task has no permanent object
+Mobile.tap(findTestObject('dashboardRepo/android.view.View32'), 0)
 
-WebUI.delay(10)
+Mobile.delay(5)
 
-Mobile.tap(findTestObject('android.view.View29'), 0)
+//Click start visit icon to view the setting of date and time
+Mobile.tap(findTestObject('startVisitRepo/startVisit_icon'), 0)
 
-WebUI.delay(10)
+Mobile.delay(5)
 
-Mobile.tap(findTestObject('android.view.View36'), 0)
+//Clicking of start date icon
+Mobile.tap(findTestObject('startVisitRepo/date_Icon'), 0)
 
-WebUI.delay(5)
+Mobile.delay(5)
 
-Mobile.tap(findTestObject('android.view.View101 - 13'), 0)
+//Change object based on the current object of the calendar
+//Instances change frequently so you need to update the object for you to tap the value of the date 
+Mobile.tap(findTestObject('startVisitRepo/datePickerRepo/android.view.View103 - 12'), 0)
 
-WebUI.delay(5)
+Mobile.delay(5)
 
-Mobile.tap(findTestObject('android.widget.Button5 - Set'), 0)
+//Clicking of set button for the date picker
+Mobile.tap(findTestObject('startVisitRepo/datePickerRepo/set_btn'), 0)
 
-WebUI.delay(5)
+Mobile.delay(5)
 
-Mobile.tap(findTestObject('android.view.View42'), 0)
+//Clicking of time icon to view the time modal 
+Mobile.tap(findTestObject('startVisitRepo/time_icon'), 0)
 
-WebUI.delay(10)
+Mobile.delay(5)
 
-Mobile.setText(findTestObject('android.widget.EditText0'), '03', 0)
-WebUI.delay(10)
+//Change hour
+Mobile.setText(findTestObject('startVisitRepo/timeRepo/hour_editText'), '03', 0)
 
-Mobile.setText(findTestObject('android.widget.EditText1'), '55', 0)
-WebUI.delay(10)
+//Change minutes
+Mobile.setText(findTestObject('startVisitRepo/timeRepo/minute_editText'), '55', 0)
 
-Mobile.tap(findTestObject('android.widget.Button7 - Set'), 0)
+Mobile.delay(5)
+
+//Clicking of set button for the time
+Mobile.tap(findTestObject('startVisitRepo/timeRepo/set_btn'), 0)
+Mobile.delay(5)
 
 Mobile.closeApplication()
 
